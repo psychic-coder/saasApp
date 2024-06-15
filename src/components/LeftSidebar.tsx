@@ -17,7 +17,7 @@ const LeftSidebar = () => {
           className="flex cursor-pointer items-center gap-1  pb-10 max-lg:justify-center"
         >
           <Image
-            src="/public/icons/logo.svg"
+            src="/icons/logo.svg"
             width={27}
             height={27}
             alt="Logo"
