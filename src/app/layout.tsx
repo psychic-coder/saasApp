@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
-import ConvexClientProvider from "./providers/ConvexProvider";
+import ConvexClerkProvider from "../providers/ConvexClerkProvider";
+// import AudioProvider from "@/providers/AudioProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PodCaster",
-  description: "Generated Podcast",
-  icons:{
-    icon:"/icons/logo.svg"
-  }
+  title: "Podcastr",
+  description: "Generate your podcasts using AI",
+  icons: {
+    icon: "/icons/logo.svg",
+  },
 };
 
 export default function RootLayout({
@@ -19,10 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-      <ConvexClientProvider>{children}</ConvexClientProvider>
-        </body>
-    </html>
+    <ConvexClerkProvider>
+      <html lang="en">
+        <body className={`${manrope.className}`}>{children}</body>
+      </html>
+    </ConvexClerkProvider>
   );
 }
